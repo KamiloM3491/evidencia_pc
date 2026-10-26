@@ -1,5 +1,6 @@
 import roleService from "../services/role.service.js";
 
+// -- Controlador Consultar todos los roles --
 const listRole = async (req, res) => {
   try {
     const roles = await roleService.listRole();

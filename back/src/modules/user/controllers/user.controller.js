@@ -1,6 +1,7 @@
 
 import userService from "../services/user.service.js";
 
+// -- Controlador Registro Usuario --
 const registerUser = async (req, res) => {
   try {
     const { nombre, apellido, correo, contrasena, telefono, direccion } = req.body;
@@ -30,33 +31,26 @@ const registerUser = async (req, res) => {
   }
 };
 
-const listUser = async (req, res) => {
+// -- Controlador Consulta Usuario por correo --
+const getUserByEmail = async (req, res) => {
   try {
-    const users = await userService.listUser();
-    return res.status(200).json({ users });
+    const user = await userService.getUserByEmail(req.params.correo);
+  
+    if (!user) {
+      return res.status(404).json({
+         mensaje: "Usuario no encontrado",
+      });
+    }
+  
+    return res.status(200).json({ user });
   } catch (error) {
-    return res.status(500).json({ mensaje: "Error al consultar los usuarios" });
+    return res.status(500).json({
+      mensaje: "Error al consultar el usuario por correo",
+    });
   }
 };
 
-const getUserByEmail = async (req, res) => {
-    try {
-      const user = await userService.getUserByEmail(req.params.correo);
-  
-      if (!user) {
-        return res.status(404).json({
-          mensaje: "Usuario no encontrado",
-        });
-      }
-  
-      return res.status(200).json({ user });
-    } catch (error) {
-      return res.status(500).json({
-        mensaje: "Error al consultar el usuario por correo",
-      });
-    }
-  };
-
+// -- Controlador Consulta Usuario por ID --
 const getUserById = async (req, res) => {
   try {
     const user = await userService.getUserById(req.params.id);
@@ -71,6 +65,17 @@ const getUserById = async (req, res) => {
   }
 };
 
+// -- Controlador Consultar todos los usuarios --
+const listUser = async (req, res) => {
+  try {
+    const users = await userService.listUser();
+    return res.status(200).json({ users });
+  } catch (error) {
+    return res.status(500).json({ mensaje: "Error al consultar los usuarios" });
+  }
+};
+
+// -- Controlador Actualizar Usuario --
 const updateUser = async (req, res) => {
   try {
     const user = await userService.updateUser(req.params.id, req.body);
@@ -92,6 +97,7 @@ const updateUser = async (req, res) => {
   }
 };
 
+// -- Controlador Eliminar Usuario --
 const deleteUser = async (req, res) => {
   try {
     const user = await userService.deleteUser(req.params.id);
@@ -110,9 +116,9 @@ const deleteUser = async (req, res) => {
 
 export default {
   registerUser,
-  listUser,
   getUserByEmail,
   getUserById,
+  listUser,
   updateUser,
   deleteUser,
 };

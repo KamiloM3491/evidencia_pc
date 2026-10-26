@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import User from "../models/user.model.js";
 import Role from "../../role/models/role.model.js";
 
+// -- Servicio Registro Usuario --
 const registerUser = async (userData) => {
   const existingUser = await User.findOne({ correo: userData.correo });
 
@@ -31,18 +32,22 @@ const registerUser = async (userData) => {
   return user;
 };
 
+// -- Servicio Consulta Usuario por correo --
 const getUserByEmail = async (correo) => {
   return await User.findOne({ correo }).select("-contrasena");
 };
 
+// -- Servicio Consulta Usuario por ID --
 const getUserById = async (id) => {
   return await User.findById(id).select("-contrasena");
 };
 
+// -- Servicio Consultar todos los usuarios --
 const listUser = async () => {
   return await User.find().select("-contrasena");
 };
 
+// -- Servicio Actualizar Usuario --
 const updateUser = async (id, userData) => {
   const updateData = {
     nombre: userData.nombre,
@@ -67,6 +72,7 @@ const updateUser = async (id, userData) => {
   }).select("-contrasena");
 };
 
+// -- Servicio Eliminar Usuario --
 const deleteUser = async (id) => {
   return await User.findByIdAndDelete(id).select("-contrasena");
 };

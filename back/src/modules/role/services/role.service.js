@@ -1,5 +1,6 @@
 import Role from "../models/role.model.js";
 
+// -- Servicio Consultar todos los roles --
 const listRole = async () => {
   try {
     return await Role.find();

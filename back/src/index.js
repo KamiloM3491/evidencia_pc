@@ -1,10 +1,8 @@
 import express from "express";
-// const express = require("express");
 
 import connectMongoDb from "./config/mongoConnection.js";
 import routes from "./routes.js";
 
-// const connectMongoDb = require("./config/mongoConnection");
 
 const app = express();
 const PORT = process.env.PORT || 4000;

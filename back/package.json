@@ -1,7 +1,7 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modulos del backend aplicativo Pequenas Criaturas",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,8 +9,8 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js "
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["pequenas", "criaturas", "backend", "express", "node", "mongodb", "mongoose"],
+  "author": "Camilo Munevar",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
