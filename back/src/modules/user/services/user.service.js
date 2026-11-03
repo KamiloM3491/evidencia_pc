@@ -32,6 +32,33 @@ const registerUser = async (userData) => {
   return user;
 };
 
+// -- Servicio Inicio de Sesión Usuario --
+const loginUser = async (correo, contrasena) => {
+  const user = await User.findOne({ correo });
+
+  if (!user) {
+    throw new Error("Correo o contraseña incorrectos");
+  }
+
+  if (user.estadoUsuario !== "Activo") {
+    throw new Error("El usuario se encuentra inactivo");
+  }
+
+  const passwordValid = await bcrypt.compare(
+    contrasena,
+    user.contrasena
+  );
+
+  if (!passwordValid) {
+    throw new Error("Correo o contraseña incorrectos");
+  }
+
+  const userData = user.toObject();
+  delete userData.contrasena;
+
+  return userData;
+};
+
 // -- Servicio Consulta Usuario por correo --
 const getUserByEmail = async (correo) => {
   return await User.findOne({ correo }).select("-contrasena");
@@ -79,6 +106,7 @@ const deleteUser = async (id) => {
 
 export default {
   registerUser,
+  loginUser,
   getUserByEmail,
   getUserById,
   listUser,

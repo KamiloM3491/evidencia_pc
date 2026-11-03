@@ -1,0 +1,104 @@
+
+.navbar {
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    min-height: 75px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Nombre de la tienda */
+
+.navbar-brand {
+    text-decoration: none;
+    color: #AA7DB1;
+}
+
+.navbar-brand-name {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+/* Menú */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #555555;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: #AA7DB1;
+}
+
+/* Botón de registro */
+
+.navbar-register {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #AA7DB1;
+    padding: 10px 20px;
+    border-radius: 25px;
+
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 15px;
+
+    transition: background-color 0.3s ease;
+}
+
+.navbar-register:hover {
+    background-color: #8F6398;
+}
+
+/* Adaptación a dispositivos móviles */
+
+@media (max-width: 600px) {
+
+    .navbar-container {
+        padding: 15px 18px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar-brand-name {
+        font-size: 24px;
+    }
+
+    .navbar-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navbar-link {
+        font-size: 14px;
+    }
+
+    .navbar-register {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

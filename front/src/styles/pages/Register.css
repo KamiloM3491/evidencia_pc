@@ -1,0 +1,168 @@
+/* CONTENEDOR GENERAL */
+.register-page {
+    width: 100%;
+    min-height: 650px;
+    padding: 60px 20px;
+    background: linear-gradient(
+        135deg,
+        #F8F4FA,
+        #CDE8F9
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* TARJETA DE REGISTRO */
+.register-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 45px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+/* ENCABEZADO */
+.register-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-subtitle {
+    color: #AA7DB1;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.register-heading h1 {
+    color: #704477;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.register-heading p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* FORMULARIO */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #704477;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #D8C8DD;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #444444;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #AA7DB1;
+    box-shadow: 0 0 0 3px rgba(170, 125, 177, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #AAAAAA;
+}
+
+/* BOTÓN */
+.register-submit {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 25px;
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    font-family: 'Glacial Into Difference', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-submit:hover:not(:disabled) {
+    background-color: #8F6398;
+}
+
+.register-submit:disabled {
+    background-color: #BDBDBD;
+    cursor: not-allowed;
+}
+
+/* MENSAJES */
+.register-message {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+}
+
+.register-message.success {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.register-message.error {
+    background-color: #FDECEA;
+    color: #C0392B;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 35px 15px;
+    }
+
+    .register-container {
+        padding: 30px 22px;
+    }
+
+    .register-heading h1 {
+        font-size: 32px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,391 @@
+
+/* =========================================
+   PÁGINA DE PERFIL
+========================================= */
+
+.userprofile-page {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: #CDE8F9;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.userprofile-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.userprofile-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.userprofile-header h1 {
+    margin: 0 0 10px;
+    color: #80558A;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 2.2rem;
+}
+
+.userprofile-header p {
+    margin: 0;
+    color: #666666;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.userprofile-avatar {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #B181C4;
+    color: #FFFFFF;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 2.5rem;
+}
+
+/* =========================================
+   INFORMACIÓN DEL USUARIO
+========================================= */
+
+.userprofile-information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.userprofile-field {
+    padding: 14px;
+    border: 1px solid #E8DCEC;
+    border-radius: 9px;
+    background-color: #FAF7FB;
+    overflow-wrap: anywhere;
+}
+
+.userprofile-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #80558A;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.userprofile-field p {
+    margin: 0;
+    color: #444444;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   ACCIONES DEL PERFIL
+========================================= */
+
+.userprofile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.userprofile-button {
+    display: inline-block;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 9px;
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.userprofile-button:hover {
+    background-color: #91649A;
+    transform: translateY(-1px);
+}
+
+/* Botón eliminar cuenta */
+
+.userprofile-delete-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #C66A6A;
+    border-radius: 9px;
+    background-color: #FFFFFF;
+    color: #B34F4F;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.userprofile-delete-button:hover {
+    background-color: #B34F4F;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.userprofile-delete-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Enlace volver al inicio */
+
+.userprofile-home-link {
+    color: #91649A;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.userprofile-home-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   MENSAJES DE ERROR
+========================================= */
+
+.userprofile-error {
+    margin: 20px 0 0;
+    padding: 12px 15px;
+    border: 1px solid #E5A5A5;
+    border-radius: 8px;
+    background-color: #FFF0F0;
+    color: #B33A3A;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* =========================================
+   VENTANAS MODALES
+========================================= */
+
+.userprofile-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(35, 20, 40, 0.55);
+    box-sizing: border-box;
+    animation: userprofile-fade-in 0.2s ease;
+}
+
+.userprofile-modal {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    animation: userprofile-modal-appear 0.25s ease;
+}
+
+/* =========================================
+   ICONOS DE LOS MODALES
+========================================= */
+
+.userprofile-modal-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.userprofile-warning-icon {
+    background-color: #FCECEC;
+    color: #B34F4F;
+}
+
+.userprofile-success-icon {
+    background-color: #E8F5E9;
+    color: #4B9560;
+}
+
+/* =========================================
+   TEXTO DE LOS MODALES
+========================================= */
+
+.userprofile-modal h2 {
+    margin: 0 0 12px;
+    color: #80558A;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 1.45rem;
+    font-weight: bold;
+}
+
+.userprofile-modal p {
+    margin: 0 0 25px;
+    color: #666666;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   BOTONES DE LOS MODALES
+========================================= */
+
+.userprofile-modal-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.userprofile-modal-button {
+    min-width: 135px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.userprofile-modal-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.userprofile-modal-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Confirmar eliminación */
+
+.userprofile-modal-delete {
+    background-color: #B34F4F;
+    color: #FFFFFF;
+}
+
+.userprofile-modal-delete:hover:not(:disabled) {
+    background-color: #963E3E;
+}
+
+/* Cancelar */
+
+.userprofile-modal-cancel {
+    border: 1px solid #AA7DB1;
+    background-color: #FFFFFF;
+    color: #90649A;
+}
+
+.userprofile-modal-cancel:hover:not(:disabled) {
+    background-color: #F5EDF7;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes userprofile-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes userprofile-modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   DISEÑO ADAPTABLE
+========================================= */
+
+@media (max-width: 520px) {
+    .userprofile-page {
+        padding: 30px 15px;
+    }
+
+    .userprofile-container {
+        padding: 28px 20px;
+    }
+
+    .userprofile-information {
+        grid-template-columns: 1fr;
+    }
+
+    .userprofile-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .userprofile-modal {
+        padding: 30px 20px;
+    }
+
+    .userprofile-modal-actions {
+        flex-direction: column;
+    }
+
+    .userprofile-modal-button {
+        width: 100%;
+    }
+}

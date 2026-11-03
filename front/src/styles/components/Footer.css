@@ -1,0 +1,103 @@
+
+.footer {
+    width: 100%;
+    background-color: #CDE8F9;
+    color: #444444;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 30px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* Información de la tienda */
+
+.footer-about h2 {
+    color: #AA7DB1;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 27px;
+    margin: 0 0 12px;
+}
+
+.footer-about p,
+.footer-contact p {
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Enlaces */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    color: #8F6398;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #444444;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #AA7DB1;
+}
+
+/* Información de contacto */
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+/* Franja inferior */
+
+.footer-bottom {
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Adaptación a dispositivos móviles */
+
+@media (max-width: 768px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 35px 22px;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+}

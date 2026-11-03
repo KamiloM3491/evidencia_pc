@@ -31,6 +31,37 @@ const registerUser = async (req, res) => {
   }
 };
 
+// -- Controlador Inicio de Sesión Usuario --
+const loginUser = async (req, res) => {
+  try {
+    const { correo, contrasena } = req.body;
+
+    if (!correo || !contrasena) {
+      return res.status(400).json({
+        mensaje: "El correo y la contraseña son obligatorios",
+      });
+    }
+
+    const user = await userService.loginUser(correo, contrasena);
+
+    return res.status(200).json({
+      mensaje: "Inicio de sesión exitoso",
+      user,
+    });
+
+  } catch (error) {
+    const status = error.message.includes("incorrectos")
+      ? 401
+      : error.message.includes("inactivo")
+        ? 403
+        : 500;
+
+    return res.status(status).json({
+      mensaje: error.message,
+    });
+  }
+};
+
 // -- Controlador Consulta Usuario por correo --
 const getUserByEmail = async (req, res) => {
   try {
@@ -116,6 +147,7 @@ const deleteUser = async (req, res) => {
 
 export default {
   registerUser,
+  loginUser,
   getUserByEmail,
   getUserById,
   listUser,

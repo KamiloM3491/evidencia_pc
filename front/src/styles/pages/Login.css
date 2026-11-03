@@ -1,0 +1,182 @@
+
+/* -- Página de inicio de sesión -- */
+
+.login-page {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: #CDE8F9;
+}
+
+/* -- Contenedor del formulario -- */
+
+.login-container {
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+}
+
+/* -- Encabezado -- */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    margin: 0 0 12px;
+    color: #80558A;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.login-header p {
+    margin: 0;
+    color: #666666;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* -- Formulario -- */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-field label {
+    color: #684875;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #D8C5DE;
+    border-radius: 9px;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+    border-color: #AA7DB1;
+    box-shadow: 0 0 0 3px rgba(170, 125, 177, 0.15);
+}
+
+.login-field input::placeholder {
+    color: #AAAAAA;
+}
+
+/* -- Mensaje de error -- */
+
+.login-error {
+    margin: 0;
+    padding: 11px 13px;
+    border: 1px solid #E8B8B8;
+    border-radius: 8px;
+    background-color: #FFF0F0;
+    color: #A83232;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+/* -- Botón iniciar sesión -- */
+
+.login-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.login-button:hover:not(:disabled) {
+    background-color: #91649A;
+    transform: translateY(-1px);
+}
+
+.login-button:disabled {
+    background-color: #C6AACB;
+    cursor: not-allowed;
+}
+
+/* -- Registro -- */
+
+.login-register {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #EEEEEE;
+    text-align: center;
+}
+
+.login-register p {
+    margin: 0 0 12px;
+    color: #666666;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.login-register-button {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid #AA7DB1;
+    border-radius: 9px;
+    color: #91649A;
+    background-color: #FFFFFF;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.login-register-button:hover {
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+}
+
+/* -- Diseño adaptable -- */
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 30px 15px;
+    }
+
+    .login-container {
+        padding: 28px 22px;
+    }
+
+    .login-header h1 {
+        font-size: 1.7rem;
+    }
+}

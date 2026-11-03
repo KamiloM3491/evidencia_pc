@@ -1,0 +1,355 @@
+/* =========================================
+   PÁGINA ACTUALIZAR PERFIL
+========================================= */
+
+.updateprofile-page {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: #F8F5FA;
+}
+
+.updateprofile-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(90, 55, 100, 0.12);
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.updateprofile-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.updateprofile-header h1 {
+    margin: 0 0 12px;
+    color: #7D5487;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.updateprofile-header p {
+    margin: 0;
+    color: #777777;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.updateprofile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.updateprofile-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.updateprofile-form-group label {
+    color: #654B6D;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+}
+
+.updateprofile-form-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #D8C7DE;
+    border-radius: 9px;
+    background-color: #FFFFFF;
+    color: #444444;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.updateprofile-form-group input:focus {
+    outline: none;
+    border-color: #B181C4;
+    box-shadow: 0 0 0 3px rgba(177, 129, 196, 0.15);
+}
+
+.updateprofile-form-group input::placeholder {
+    color: #AAAAAA;
+}
+
+/* =========================================
+   MENSAJES DE ERROR
+========================================= */
+
+.updateprofile-error {
+    padding: 12px 15px;
+    border: 1px solid #E5A5A5;
+    border-radius: 8px;
+    background-color: #FFF0F0;
+    color: #B33A3A;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* =========================================
+   BOTONES DEL FORMULARIO
+========================================= */
+
+.updateprofile-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.updateprofile-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 9px;
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.updateprofile-button:hover {
+    background-color: #90649A;
+    transform: translateY(-2px);
+}
+
+.updateprofile-button:disabled {
+    background-color: #C7B5CC;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.updateprofile-button-cancel {
+    background-color: #FFFFFF;
+    color: #90649A;
+    border: 1px solid #AA7DB1;
+}
+
+.updateprofile-button-cancel:hover {
+    background-color: #F5EDF7;
+}
+
+/* =========================================
+   VENTANA MODAL
+========================================= */
+
+.updateprofile-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(35, 20, 40, 0.55);
+    box-sizing: border-box;
+    animation: updateprofile-fade-in 0.2s ease;
+}
+
+.updateprofile-modal {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    animation: updateprofile-modal-appear 0.25s ease;
+}
+
+/* =========================================
+   ICONO DEL MODAL
+========================================= */
+
+.updateprofile-modal-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #F2E8F5;
+    color: #AA7DB1;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.updateprofile-success-icon {
+    background-color: #E8F5E9;
+    color: #4B9560;
+}
+
+/* =========================================
+   TEXTO DEL MODAL
+========================================= */
+
+.updateprofile-modal h2 {
+    margin: 0 0 12px;
+    color: #76527F;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.updateprofile-modal p {
+    margin: 0 0 25px;
+    color: #777777;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   BOTONES DEL MODAL
+========================================= */
+
+.updateprofile-modal-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.updateprofile-modal-button {
+    min-width: 135px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #AA7DB1;
+    color: #FFFFFF;
+    font-family: "Glacial Indifference", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.updateprofile-modal-button:hover:not(:disabled) {
+    background-color: #90649A;
+    transform: translateY(-2px);
+}
+
+.updateprofile-modal-button:disabled {
+    background-color: #C7B5CC;
+    cursor: not-allowed;
+}
+
+.updateprofile-modal-cancel {
+    background-color: #FFFFFF;
+    color: #90649A;
+    border: 1px solid #AA7DB1;
+}
+
+.updateprofile-modal-cancel:hover:not(:disabled) {
+    background-color: #F5EDF7;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes updateprofile-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes updateprofile-modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+    .updateprofile-page {
+        padding: 30px 15px;
+    }
+
+    .updateprofile-container {
+        padding: 28px 20px;
+    }
+
+    .updateprofile-header h1 {
+        font-size: 25px;
+    }
+
+    .updateprofile-header p {
+        font-size: 14px;
+    }
+
+    .updateprofile-actions {
+        flex-direction: column;
+    }
+
+    .updateprofile-button {
+        width: 100%;
+    }
+
+    .updateprofile-modal {
+        padding: 30px 20px;
+    }
+
+    .updateprofile-modal h2 {
+        font-size: 21px;
+    }
+
+    .updateprofile-modal-actions {
+        flex-direction: column;
+    }
+
+    .updateprofile-modal-button {
+        width: 100%;
+    }
+}

@@ -5,6 +5,7 @@ import user from "../controllers/user.controller.js";
 const router = express.Router();
 
 router.post("/register", user.registerUser);
+router.post("/login", user.loginUser);
 router.get("/list", user.listUser);
 router.get("/email/:correo", user.getUserByEmail);
 router.get("/:id", user.getUserById);
